@@ -1,0 +1,121 @@
+.course-info {
+  display: flex;
+  justify-content: center;
+  margin: 3rem auto;
+
+  .course-details {
+    margin-top: 3rem;
+    margin-right: 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 80%;
+
+    .metadata {
+      display: block;
+
+      &>* {
+        line-height: 130%;
+      }
+    }
+
+    &>* {
+      margin: 1rem 0;
+    }
+
+    .course-image {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      margin: 0;
+    }
+
+    .title {
+      text-transform: capitalize;
+      font-size: 3rem;
+
+      color: var(--heading-color);
+    }
+
+    .author {
+      margin-top: 1.5rem;
+      font-size: 1.8rem;
+      font-style: italic;
+      letter-spacing: 1px;
+    }
+
+    .description {
+      p {
+        margin: 1rem auto;
+      }
+    }
+  }
+
+  .recommendations {
+    border: 1px solid #000;
+    border-radius: 10px;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    height: 1000px;
+    overflow: auto;
+
+    .title {
+      text-align: center;
+      color: var(--heading-color);
+      letter-spacing: 1px;
+    }
+
+    .course {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2rem auto;
+
+      &:not(:last-child) {
+        border-bottom: 1px solid #ccc;
+      }
+
+      .course-image {
+        width: 90%;
+        height: 250px;
+        border-radius: 10px;
+        cursor: pointer;
+      }
+
+      .title {
+        margin: 1rem auto;
+        text-align: center;
+        font-weight: 200;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .course-info {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 3rem 1%;
+
+    .course-details {
+      justify-content: center;
+      align-items: center;
+
+      .title {
+        text-align: center;
+      }
+    }
+  }
+
+  .courses .course-list .course .course-info {
+    margin: 0;
+
+    &>*:last-child {
+      display: none;
+    }
+  }
+
+}

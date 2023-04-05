@@ -1,0 +1,27 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+:root {
+  --container-width: 1200px;
+  --primary-color: #9176bc;
+  --background-color: #f9f8f8;
+  --heading-color: #ab5412;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-size: 18px;
+  background-color: var(--background-color);
+}
+
+.main-container {
+  max-width: var(--container-width);
+  margin: 0 auto;
+}
