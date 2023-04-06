@@ -1,28 +1,19 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { BsFillPersonFill } from 'react-icons/bs';
 import { courses } from '../../utils/data';
 import './courses.scss';
 
 const Courses = () => {
-  const navigate = useNavigate();
-  const handleClick = (course) => {
-    navigate(course.url, {
-      state: course
-    });
-  };
   return (
     <div className='courses'>
       <h2 className='heading'>Popular Courses</h2>
       <div className='course-list'>
         {courses.map((course) => {
-          const { id, title, duration, enrolledCount, courseImage } = course;
+          const { id, title, url, duration, enrolledCount, courseImage } =
+            course;
           return (
-            <div
-              onClick={() => handleClick(course)}
-              key={id}
-              className='course'
-            >
+            <Link to={url} key={id} className='course'>
               <div className='image-section'>
                 <img src={courseImage} alt={title} className='course-image' />
               </div>
@@ -34,7 +25,7 @@ const Courses = () => {
                 </div>
                 <div>{duration}</div>
               </div>
-            </div>
+            </Link>
           );
         })}
       </div>

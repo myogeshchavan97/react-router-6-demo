@@ -1,10 +1,17 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
+import { courses } from '../../utils/data';
 import './course_details.scss';
 
 const CourseDetails = () => {
-  const { state } = useLocation();
-  const { title, duration, enrolledCount, courseImage, author } = state || {};
+  const { pathname } = useLocation();
+  const selectedCourse = courses.find((course) => course.url === pathname);
+
+  if (!selectedCourse) {
+    return <Navigate to='/' />;
+  }
+  const { title, duration, enrolledCount, courseImage, author } =
+    selectedCourse || {};
 
   return (
     <div className='course-info'>
